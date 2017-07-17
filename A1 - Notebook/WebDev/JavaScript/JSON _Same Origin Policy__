@@ -1,0 +1,33 @@
+>> JSON "Same Origin Policy" & $.ajax() vs $.getJSON() vs $.getJSONP()
+
+$.getJSON() is shorthand usage of $.ajax(). For example:
+
+$.getJSON()
+is equal to
+
+$.ajax({
+  dataType: "json",
+  url: url,
+  data: data,
+  success: success
+});
+Use getJSON if you need to fetch a json file from your site.
+
+You are not allowed to just load json from other peoples sites for security reasons, so if you need to do that then you will probably need to specify that you want jsonp (JSON with Padding) and the site will have to return the json data in a wrapper. I'm not aware of a $.getJSONP function, but you can specify that you expect jsonp data returned using either $.getJSON() or $.ajax().
+
+Use $.ajax() if you you need to specify some custom configuration that you don't get with the shorthand. The jQuery API will give you all of the details and options available http://api.jquery.com/jquery.ajax/
+
+I've also heard some people say that they prefer to use $.ajax because $.getJSON is just going to call $.ajax anyway, but this level of speed optimization may not not necessarily worth sacrificing the convenience of using the shorthand for a lot of people. http://jonraasch.com/blog/10-advanced-jquery-performance-tuning-tips-
+
+building on @LaVaughn Haynes answer there is not a $.getJSONP() function but in your $.ajax you will have a option to call a jsonp service.
+
+$.ajax({
+url:      "http://notmydomain.com/api",
+jsonp:    "callback",
+datatype: "jsonp",
+data: {q: "select stuff", format: "json"},
+success: function( data) {
+    console.log(data) ; 
+   }
+}); 
+you would jsonp mainly when you are doing across domain calls, but this is tricky as it's a main tactic for cross site scripting attacks.

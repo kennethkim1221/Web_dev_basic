@@ -1,0 +1,3 @@
+- create notes that shows difference os DOM elements vs jQuery Objects
+- decide which format to follow in selecting ex. jquery can chain commmans like $submitButton.prop("disabled", true).val("searching....");)
+- document XHR

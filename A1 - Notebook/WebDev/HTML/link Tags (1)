@@ -1,0 +1,15 @@
+JavaScript file (sample)
+<script src="js/widget.js"></script>
+
+CSS file (sample)
+<link rel="stylesheet" href="css/main.css">
+
+jQuery
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+ 
+Font File (sample)
+<link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+ 
+
+
+

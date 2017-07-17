@@ -1,0 +1,33 @@
+>> Sample API request usibg jQuery & JSON
+
+$(document).ready(function() {
+  var linkToAPI = 'http://api.openweathermap.org/data/2.5/weather';
+  var data = {
+    q : "Portland,OR",
+    units : "metric"
+  };
+  function callBackFunc (weatherReport){
+    $('#temperature').text(weatherReport.main.temp);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         cv;
+  }
+  
+  //getJSON params: url, dataToSend, callBack() 
+   $.getJSON(linkToAPI, data, callBackFunc)
+});
+
+>> $.getJSON() Return Value for callback
+   $.getJSON() Automatically parses the returned data of an API to JSON a format and convert it to a jQuery Object 
+   ex.   
+   //$.getJSON() callBack function: 
+   
+    function displayPhotos (data) {
+      var photoHTML = '<ul>';
+      $.each(data.items , function (index, item) { // data can be used if returned value is an html file. However, we need its items property as it contains the JSON formatted values
+        
+      });
+    }
+  
+
+
+
+
+

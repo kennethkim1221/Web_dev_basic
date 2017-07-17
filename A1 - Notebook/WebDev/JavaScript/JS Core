@@ -1,0 +1,7 @@
+>> Separate JS File Container
+document.ready(function () ){
+
+}
+
+Always add at the beginning to let the html page load 1st
+
